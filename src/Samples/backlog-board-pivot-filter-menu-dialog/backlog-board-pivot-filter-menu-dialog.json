@@ -1,0 +1,29 @@
+{
+    "scopes": [
+        "vso.work",
+        "vso.work_write"
+    ],
+    "contributions": [
+        {
+            "id": "backlog-board-pivot-filter-menu-dialog",
+            "type": "ms.vss-web.action",
+            "targets": [
+                "ms.vss-work-web.backlog-board-pivot-filter-menu"
+            ],
+            "properties": {
+                "text": "Custom board menu dialog",
+                "uri": "dist/backlog-board-pivot-filter-menu-dialog/backlog-board-pivot-filter-menu-dialog.html",
+                "icon": "static/sample-icon.png",
+                "registeredObjectId": "backlog-board-pivot-filter-menu-dialog"
+            }
+        },
+        {
+            "id": "menu-modal",
+            "type": "ms.vss-web.external-content",
+            "properties": {
+                "uri": "dist/menu-modal/menu-modal.html",
+                "registeredObjectId": "menu-modal"
+            }
+        }
+    ]
+}

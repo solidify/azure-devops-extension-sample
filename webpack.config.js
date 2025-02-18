@@ -16,6 +16,7 @@ fs.readdirSync(samplesDir).filter(dir => {
 module.exports = (env, argv) => ({
     entry: entries,
     output: {
+        publicPath: "/dist/",
         filename: "[name]/[name].js"
     },
     resolve: {
@@ -42,18 +43,18 @@ module.exports = (env, argv) => ({
                 use: ["style-loader", "css-loader"],
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/, 
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
                 type: 'asset/inline'
             },
             {
-                test: /\.html$/, 
+                test: /\.html$/,
                 type: 'asset/resource'
             }
         ]
     },
     plugins: [
         new CopyWebpackPlugin({
-           patterns: [ 
+           patterns: [
                { from: "**/*.html", context: "src/Samples" }
            ]
         })
@@ -62,6 +63,9 @@ module.exports = (env, argv) => ({
         ? {
               devtool: 'inline-source-map',
               devServer: {
+                static: {
+                      directory: path.join(__dirname, 'dist'), // Ensure this points to the correct directory
+                  },
                   server: 'https',
                   port: 3000
               }
