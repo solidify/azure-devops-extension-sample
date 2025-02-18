@@ -114,15 +114,15 @@ class MenuModal extends React.Component<{}, IMenuModal> {
                         </tbody>
                     </table>
                 </div>
-                <div style={{ padding: "10px" }}>
+                <div>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
                         {this.state.selectedTags.map(tag => (
-                            <div key={tag} style={{ display: "flex", alignItems: "center", background: "#e0e0e0", borderRadius: "15px", padding: "5px 10px" }}>
+                            <div key={tag} style={{ display: "flex", alignItems: "center", background: "#e0e0e0", borderRadius: "15px" }}>
                                 <span>{tag}</span>
                                 <Button
                                     iconProps={{ iconName: "Cancel" }}
                                     onClick={() => this.removeTag(tag)}
-                                    style={{ marginLeft: "5px", padding: "0", minWidth: "20px" }}
+                                    style={{ marginLeft: "5px", minWidth: "20px" }}
                                 />
                             </div>
                         ))}
@@ -137,7 +137,7 @@ class MenuModal extends React.Component<{}, IMenuModal> {
                         <Button disabled={!this.state.newTag} text="Add Tag" onClick={this.addTag} />
                     </div>
                 </div>
-                <div style={{ display: "flex", justifyContent: "flex-end", padding: "10px", gap: "10px" }}>
+                <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}>
                     <Button text="Cancel" onClick={() => alert("Cancel not possible")} />
                     <Button text="Save" primary={true} onClick={this.updateTags} />
                 </div>
